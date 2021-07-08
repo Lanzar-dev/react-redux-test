@@ -18,6 +18,9 @@ class App extends Component {
           <button className="ageDown" onClick={this.props.onAgeDown}>
             Age Down
           </button>
+          <button className="clearHistory" onClick={this.props.clearHistory}>
+            clear history
+          </button>
         </div>
         <hr />
         <div>History</div>
@@ -49,7 +52,8 @@ const mapDispachToProps = dispatch => {
   return {
     onAgeUp: () => dispatch({ type: "AGE_UP", value: 1 }),
     onAgeDown: () => dispatch({ type: "AGE_DOWN", value: 1 }),
-    onDelEntry: (id) => dispatch({ type: "DEL_ENTRY", id: id})
+    onDelEntry: (id) => dispatch({ type: "DEL_ENTRY", id}),
+    clearHistory: (id) => dispatch({ type: "CLEAR_HISTORY", id})
   };
 };
 export default connect(
